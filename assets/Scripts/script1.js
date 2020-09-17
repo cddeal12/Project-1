@@ -41,5 +41,6 @@ foodNextBtn.on("click", function () {
 
 // Links to pageTwo when the movieNext button is clicked
 movieNextBtn.on("click", function () {
-    
+    pageOne.attr("style", "display: none;")
+    pageTwo.attr("style", "display: block;")
 });
