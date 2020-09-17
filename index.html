@@ -205,8 +205,98 @@
 
     <!-- Container holding all of the "page two" content -->
     <div class="container" id="page-two" style="display: none;">
+      <!-- ========================= This is the Meal Suggestion/ Search Page================ -->
+        <!-- ======================================================================================== -->
+        <div class="meal-suggestion-page" id="meal-suggestion-page">
+          <!-- Contains the return button to go back to start -->
+          <div class="row mr-2 d-flex justify-content-end">
+              <button class="m-2 p-2 btn btn-md btn-outline-info returnButton" id="returnBtn">Return</button>
+          </div>
+          <!-- Contains Search Bar and Search Button -->
+          <div class="row my-5 d-flex justify-content-center">
+          <form class="col-8 justify-content-center form-inline">
+              <input type="text" class="w-75 form-control mb-2 mr-sm-2" id="foodSearchEl" placeholder="What's on the menu?">
+              <button type="submit" class="btn btn-outline-info mb-2 searchBtn" id="searchBtnEl">Search</button>
+          </form>
+          <!-- This DIV remains empty until results are returned, then it is shown and appended to  -->
+          <div class="container mt-5 recipe-results-container" id="recipe-results-container" style="display: none;"></div>
+          <!-- ====================================================================================== -->
+          <!-- Container Holding all cards for Category Suggestions -->
+          <div class="container mt-5 mealSuggestionContainer" id="mealSuggestionContainer">
+            <div class="row d-flex justify-content-between">
+                <div class="card mt-5 col-10 col-sm-3  foodSuggestionCard">
+                    <!-- Used 150 x 150 pics -->
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Breakfast</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card mt-5 col-10 col-sm-3 foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Lunch</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card mt-5 col-10 col-sm-3 foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Dinner</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+                <div class="card mt-5 col-10 col-sm-3  foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Meals in under 30</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card mt-5 col-10 col-sm-3 foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Casual</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card mt-5 col-10 col-sm-3 foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Fine Dining</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+                <div class="card mt-5 col-10 col-sm-3  foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Random Cuisine #1</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card mt-5 col-10 col-sm-3 foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Random Cuisine #2</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card mt-5 col-10 col-sm-3 foodSuggestionCard">
+                    <img src="https://www.stevensegallery.com/150/150" class="card-img-top mt-3 suggestionCardImg" alt="...">
+                    <div class="card-body foodSuggestionCardBody">
+                    <h5 class="card-title suggestionTitle" id="foodSuggestionTitle">Random Cuisine #3</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
     </div>
+          
 
+    </div>
     <!-- Container holding all of the "page three" content -->
     <div class="container" id="page-three" style="display: none;">
 
