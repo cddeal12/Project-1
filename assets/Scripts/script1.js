@@ -15,9 +15,9 @@ var movieContent = $(".movie-page-content");
 foodContent.attr("style", "display: none;");
 movieContent.attr("style", "display: none;");
 
-//
+// !!!
 // These buttons will also save the state of the checkboxes in local storage, but the checkboxes are not currently working, to fix tomorrow
-//
+// !!!
 
 // Removes the main card and moves on to the foodContent on 'start' button click
 startBtn.on("click", function () {
