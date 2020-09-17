@@ -1,5 +1,8 @@
 // Declared Global Variables
 
+var omdbAPI = "b22163a3"
+var spoonacularAPI = "8e22a5e31dcc4d959a0190eca3ccff29"
+
 // Page variables
 var pageOne = $("#page-one");
 var pageTwo = $("#page-two");
