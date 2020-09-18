@@ -161,6 +161,16 @@ movieNextBtn.on("click", function () {
   $("body").attr("style", "background-color: white");
 });
 
+// Selects a movie from the moviePicks object based on user input
+console.log(moviePicks);
+console.log(moviePicks.Trending[2]);
+
+$("#movie-genre-list").on("click", ".form-check-input", function(){
+  if($(this).is(":checked")){
+    console.log($(this).val());
+  }
+})
+
 // Adds checkbox values to intolerancesArray, finds and removes of unchecked
 intolerancesList.on("click", ".form-check-input", function () {
   if ($(this).is(":checked")) {
