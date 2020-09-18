@@ -22,6 +22,10 @@ var omdbBaseURL =
 var pageOne = $("#page-one");
 var pageTwo = $("#page-two");
 var pageThree = $("#page-three");
+var intolerancesList = $("#intolerances-list");
+var intolerancesArray = [];
+var movieGenreArray = [];
+var familyMode = false;
 
 // Button Variables
 var startBtn = $("#main-start-btn");
@@ -59,6 +63,18 @@ foodNextBtn.on("click", function () {
 
 // Links to pageTwo when the movieNext button is clicked
 movieNextBtn.on("click", function () {
-    pageOne.attr("style", "display: none;")
-    pageTwo.attr("style", "display: block;")
+    pageOne.attr("style", "display: none;");
+    pageTwo.attr("style", "display: block;");
 });
+
+intolerancesList.on("click", ".form-check-input", function (){
+    if($(this).is(":checked")){
+        intolerancesArray.push($(this).val());
+        console.log(intolerancesArray);
+    }
+    else if($(this).is(":not(:checked)")){
+        var position = intolerancesArray.indexOf($(this).val());
+        intolerancesArray.splice(position, 1);
+        console.log(intolerancesArray);
+    }
+})
