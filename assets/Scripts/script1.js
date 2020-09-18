@@ -100,7 +100,6 @@ searchBtn.on("click", function(event){
     // generate a string from the intolerancesArray
     var intoleranceString = intolerancesArray.toString();
     console.log(intoleranceString);
-    // console.log(intolerancesString);
     // generate a query url based on searchTerms and intoleranceString
     var foodSearchURL = spoonacularBaseURL + searchTerms + "&intolerances=" + intoleranceString + spoonacularAPI;
     // make ajax call using foodSearchURL
@@ -125,15 +124,12 @@ searchBtn.on("click", function(event){
                 newThumbnail.attr("src", searchResponse[i].image);
                 // Recipe Title  
                 var newTitle = $("<h3>");
-                console.log(searchResponse[i].title);
                 newTitle.text(searchResponse[i].title);
                 // Appends image and text to result div
                 newSearchResult.append(newThumbnail);
                 newSearchResult.append(newTitle);
-                console.log(newSearchResult);
             // Appends search result to results container
             recipeResults.append(newSearchResult);
-            console.log(recipeResults);
         }
 
         // Displays the search results when they are finished populating
