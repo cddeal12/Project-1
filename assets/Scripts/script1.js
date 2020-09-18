@@ -151,8 +151,8 @@ suggestionsContainer.on("click", '.foodSuggestionCard', function(){
 
             // New div to be added to the container
             var newSearchResult = $("<div>");
-            newSearchResult.addClass("row border rounded my-3 p-3 bg-secondary");
-            newSearchResult.attr("RecipeId", searchResponse[i].id);
+            newSearchResult.addClass("row border rounded my-3 p-3 bg-secondary search-result");
+            newSearchResult.attr("recipeId", searchResponse[i].id);
                 // Thumbnail Image
                 var newThumbnail = $("<img>");
                 newThumbnail.addClass("col-4");
@@ -198,13 +198,12 @@ $(recipeResults).on("click", ".search-result" , function(event) {
         firstIngredient.text("Ingredients in This Recipe:");
         finalIngredients.append(firstIngredient);
         var ingredientsList = response.extendedIngredients;
-        console.log(ingredientsList);
         for (i=0; i<ingredientsList.length; i++) {
             var newIngredient = $("<li>");
             newIngredient.text(ingredientsList[i].name);
             finalIngredients.append(newIngredient);
         }
-
+        console.log(finalIngredients);
         // Iterates and lists the directions
         var finalDirections = $("<ol>");
         var firstDirection = $("<h3>");
