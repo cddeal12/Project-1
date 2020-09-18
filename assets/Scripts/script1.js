@@ -3,6 +3,21 @@
 var omdbAPI = "b22163a3"
 var spoonacularAPI = "8e22a5e31dcc4d959a0190eca3ccff29"
 
+// xxxxx
+// ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
+var spoonacularBaseURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + searchInput + "&intolerances=" + intolerancesInput + "&excludeIngredients=" + excludedIngredientsInput + "&cuisine=" + cuisineDataAttributeInput + "&apiKey=" + spoonacularAPI
+
+// Will need to make a separate call to display that recipe by including the recipe ID of the recipe the user clicks
+var spoonacularRecipeURL = "https://api.spoonacular.com/recipes/" + selectedRecipeID + "/information?includeNutrition=true"
+// ============ EXAMPLE SPOONACULAR QUERY=====================================
+// https://api.spoonacular.com/recipes/complexSearch?query=chicken&intolerances=dairy&excludeIngredients=eggs&cuisine=chinese&apiKey=8e22a5e31dcc4d959a0190eca3ccff29
+// xxxxx
+
+// xxxxx
+var omdbBaseURL = 
+// Can't query omdb API based on genre. Will research other options
+
+
 // Page variables
 var pageOne = $("#page-one");
 var pageTwo = $("#page-two");
