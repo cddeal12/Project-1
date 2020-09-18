@@ -151,6 +151,29 @@ suggestionsContainer.on("click", '.foodSuggestionCard', function(){
         url:instaSearchUrl
     }).then(function(response){
         console.log(response);
+        suggestionsContainer.attr("style", "display: none;");
+        var searchResponse = response.results;
+        // Populates the search results container with the query response
+        for (i=0; i<searchResponse.length; i++) {
+
+            // New div to be added to the container
+            var newSearchResult = $("<div>");
+            newSearchResult.addClass("row border rounded my-3 p-3 bg-secondary");
+            newSearchResult.attr("RecipeId", searchResponse[i].id);
+                // Thumbnail Image
+                var newThumbnail = $("<img>");
+                newThumbnail.addClass("col-4");
+                newThumbnail.attr("src", searchResponse[i].image);
+                // Recipe Title  
+                var newTitle = $("<h3>");
+                newTitle.text(searchResponse[i].title);
+                // Appends image and text to result div
+                newSearchResult.append(newThumbnail);
+                newSearchResult.append(newTitle);
+            // Appends search result to results container
+            recipeResults.append(newSearchResult);
+        }
+        recipeResults.attr("style", "display: block;");
     })
 
     
