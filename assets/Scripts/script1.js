@@ -1,24 +1,13 @@
 // Declared Global Variables
 
 var omdbAPI = "b22163a3";
-var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
+var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
+// var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
 
-// xxxxx
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
 var spoonacularBaseURL = "https:api.spoonacular.com/recipes/complexSearch?query=";
 
-// "https://api.spoonacular.com/recipes/complexSearch?query=" + searchInput + "&intolerances=" + intolerancesInput + "&excludeIngredients=" + excludedIngredientsInput + "&cuisine=" + cuisineDataAttributeInput + "&apiKey=" + spoonacularAPI
-
-// Will need to make a separate call to display that recipe by including the recipe ID of the recipe the user clicks
-// var spoonacularRecipeURL = "https://api.spoonacular.com/recipes/" + selectedRecipeID + "/information?includeNutrition=true"
-// ============ EXAMPLE SPOONACULAR QUERY=====================================
-// https://api.spoonacular.com/recipes/complexSearch?query=chicken&intolerances=dairy&excludeIngredients=eggs&cuisine=chinese&apiKey=8e22a5e31dcc4d959a0190eca3ccff29
-// xxxxx
-
-// xxxxx
-// var omdbBaseURL = 
-// Can't query omdb API based on genre. Will research other options
 
 
 // Page variables
@@ -42,6 +31,8 @@ var foodContent = $(".food-page-content");
 var movieContent = $(".movie-page-content");
 var recipeResults = $("#recipe-results-container");
 var suggestionsContainer = $("#mealSuggestionContainer");
+var mainRecipeInfo = $("#main-recipe-info");
+var mainRecipeImage = $("#main-recipe-img");
 
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -118,8 +109,8 @@ searchBtn.on("click", function(event){
 
             // New div to be added to the container
             var newSearchResult = $("<div>");
-            newSearchResult.addClass("row border rounded my-3 p-3 bg-secondary");
-            newSearchResult.attr("RecipeId", searchResponse[i].id);
+            newSearchResult.addClass("row border rounded my-3 p-3 bg-secondary search-result");
+            newSearchResult.attr("recipeId", searchResponse[i].id);
                 // Thumbnail Image
                 var newThumbnail = $("<img>");
                 newThumbnail.addClass("col-4");
@@ -180,6 +171,82 @@ suggestionsContainer.on("click", '.foodSuggestionCard', function(){
 
     
 })
+
+// Populates final page
+$(recipeResults).on("click", ".search-result" , function(event) {
+    console.log("Clicked on a result");
+    console.log($(this));
+
+    // Remove the search bar and results, show a page of the recipe details
+    pageTwo.attr("style", "display: none;");
+    pageThree.attr("style", "display: block;");
+
+    $.ajax ({
+        method: "GET",
+        url: "https://api.spoonacular.com/recipes/" + $(this).attr("recipeId") + "/information?includeNutrition=true" + spoonacularAPI
+    }).then(function(response){
+        console.log(response);
+        // Creates text info from the response
+        var finalTitle = $("<h1>");
+        finalTitle.text(response.title);
+        var finalInfo = $("<p>");
+        finalInfo.html(response.summary);
+
+        // Iterates and lists each ingredient
+        var finalIngredients = $("<ol>");
+        var firstIngredient = $("<h3>");
+        firstIngredient.text("Ingredients in This Recipe:");
+        finalIngredients.append(firstIngredient);
+        var ingredientsList = response.extendedIngredients;
+        console.log(ingredientsList);
+        for (i=0; i<ingredientsList.length; i++) {
+            var newIngredient = $("<li>");
+            newIngredient.text(ingredientsList[i].name);
+            finalIngredients.append(newIngredient);
+        }
+
+        // Iterates and lists the directions
+        var finalDirections = $("<ol>");
+        var firstDirection = $("<h3>");
+        firstDirection.text("Step-by-Step Instructions:");
+        finalDirections.append(firstDirection);
+
+        // IF the directions include substeps, display them properly, IF NOT, display a normal numbered list
+        var instructionsList = response.analyzedInstructions;
+        for (i=0; i<instructionsList.length; i++) {
+            if (instructionsList[i].name !== "") {
+                var newInstruction = $("<li>");
+                newInstruction.addClass("my-3");
+                newInstruction.text(instructionsList[i].name);
+                var newList = $("<ol>");
+                newList.attr("style", "list-style-type: lower-alpha;")
+                for (q=0; q<instructionsList[i].steps.length; q++) {
+                    var newSubIntruction = $("<li>");
+                    newSubIntruction.text(instructionsList[i].steps[q].step);
+                    newList.append(newSubIntruction);
+                }
+            newInstruction.append(newList);
+            finalDirections.append(newInstruction);
+            } else {
+                for (q=0; q<instructionsList[i].steps.length; q++) {
+                    var newInstruction = $("<li>")
+                    newInstruction.addClass("my-3");
+                    newInstruction.text(instructionsList[i].steps[q].step);
+                    finalDirections.append(newInstruction);
+                }
+            }
+        }
+
+        // append text info
+        mainRecipeInfo.append(finalTitle);
+        mainRecipeInfo.append(finalInfo);
+        mainRecipeInfo.append(finalIngredients);
+        mainRecipeInfo.append(finalDirections);
+        // appends image
+        mainRecipeImage.attr("src", response.image);
+    })
+});
+
 
 
     
