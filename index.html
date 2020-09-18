@@ -13,7 +13,8 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/mainStyle.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@500&family=IBM+Plex+Sans&family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/custom.css"/>
   </head>
 
   <body>
@@ -33,28 +34,24 @@
       </div> -->
 
       <!-- end of container div -->
-      <div class="card text-center mx-auto" id="start-card" >
-        <div class="card-body" id="mainPageCard">
-          <h5 class="card-title" id="mainCardTitleText">
-            Something Will Go Here
-          </h5>
-          <p class="card-text" id="mainCardText">
-            The date planner app can help you find a meal to cook to impress your
-            date. Along with your meal we give you wine options tailored to your
-            meal choices. We can even give you movie suggestions and what
-            streaming service the movies are on!
-          </p>
-          <div class="col text-center">
-            <a href="#" class="btn btn-primary" id="main-start-btn">Start</a>
-          </div>
+      <div class=" card col-10 col-md-6 onboard-card text-center mx-auto" id="start-card" >
+        <h3 class="card-title" id="mainCardTitleText">
+          DateMate
+        </h3>
+        <p class="card-text" id="mainCardText">
+          Find a meal and movie combo that won’t kill your date!
+        </p>
+        <div class="btn-row d-flex justify-content-center">
+          <a href="#" class="btn btn-primary" id="main-start-btn">Start</a>
         </div>
       </div>
       <!-- end of card div -->
 
       <!-- Page content for selecting food options -->
-      <div class="food-page-content">
-        <h1 class="allergy text-center">Intolerance?</h1>
-        <div id="intolerances-list" class="col-12 col-md-4 mx-auto">
+      <div class="card col-10 col-md-6 mx-auto onboard-card food-page-content">
+        <h5 class="allergy text-center">Food allergies?</h5>
+        <p class="text-center">Are there sensitivities to any of these foods?</p>
+        <div id="intolerances-list" class="col-6 mx-auto">
     
           <!-- Milk Checkbox -->
           <div class="form-check">
@@ -119,19 +116,20 @@
               Fish
             </label>
           </div>
-
-          <!-- Button to move on to movie page content -->
-          <div class="col text-center">
-            <a href="#" class="btn btn-primary" id="food-next-btn">Next</a>
-          </div>
+       
+        </div>
+         <!-- Button to move on to movie page content -->
+        <div class="btn-row d-flex justify-content-end">
+          <a href="#" class="btn btn-primary" id="food-next-btn">Next</a>
         </div>
       </div>
 
       <!-- Page content for making a movie search -->
-      <div class="movie-page-content">
-        <h1 class="movie text-center">Movie Preferences</h1>
+      <div class="card col-10 col-md-6 mx-auto onboard-card movie-page-content">
+        <h5 class="movie text-center">Movie Preferences</h5>
+        <p class="text-center">Any favorite movie genres?</p>
 
-        <div id="movie-genre-list text-center" class="col-12 col-md-4 mx-auto">
+        <div id="movie-genre-list text-center" class="col-6 mx-auto">
           <!-- Trending Radio -->
           <div class="form-check">
             <input class="form-check-input" type="radio" name="exampleRadios" id="trending-radio" value="option1" checked>
@@ -158,7 +156,7 @@
 
           <!-- Action Radio -->
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="trending-radio" value="option1" checked>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="action-radio" value="option1" checked>
             <label class="form-check-label" for="exampleRadios1">
               Action
             </label>
@@ -195,11 +193,10 @@
               Documentary
             </label>
           </div>
-
-          <!-- Next button for populating next part of page content -->
-          <div class="col text-center">
-            <a href="#" class="btn btn-primary" id="movie-next-btn">Next</a>
-          </div>
+        </div>
+        <!-- Next button for populating next part of page content -->
+        <div class="btn-row d-flex justify-content-end">
+          <a href="#" class="btn btn-primary" id="movie-next-btn">Next</a>
         </div>
       </div>
     </div>
