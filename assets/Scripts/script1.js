@@ -1,7 +1,8 @@
 // Declared Global Variables
 
 var omdbAPI = "b22163a3";
-var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
+var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
+// var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
 
 // xxxxx
