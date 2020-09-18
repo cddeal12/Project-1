@@ -8,7 +8,16 @@ var searchInputEl = $("#foodSearchEl");
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
 var spoonacularBaseURL = "https:api.spoonacular.com/recipes/complexSearch?query=";
 
-
+var moviePicks = {
+    Trending:["Bad Boys for Life", "Da 5 Bloods", "Hamilton", "Weathering with You", "The Gentlemen", "Birds of Prey", "The Rhythm Section", "Dolittle", "The Lovebirds", "The Photograph"],
+    Drama: ["A Star is Born", "A Quiet Place", "Lady Bird", "The Shape of Water", "Baby Driver", "La La Land", "Gravity", "The Irishman", "The Peanut Butter Falcon", "Once Upon a Time in Hollywood" ],
+    Romance: ["The Lovebirds", "The Big Sick", "The Princess Bride", "Forrest Gump", "The Notebook", "Remember Me", "Titanic", "The Curious Case of Benjamin", "Eternal Sunshine of the Spotless Mind", "Silver Linings Playbook"],
+    Action: ["Avengers:Infinity War", "Avengers: Endgame", "Dunkirk", "Logan", "Wonder Woman", "Ready Player One", "Fury", "War of the Planet of the Apes", "The Gentlemen", "Ford v Ferrari"],
+    Scifi:[],
+    Horror: [],
+    Comedy: [],
+    Documentary: []
+}
 
 // Page variables
 var pageOne = $("#page-one");
