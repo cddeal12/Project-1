@@ -125,7 +125,8 @@ searchBtn.on("click", function(event){
                 newThumbnail.attr("src", searchResponse[i].image);
                 // Recipe Title  
                 var newTitle = $("<h3>");
-                newTitle.text(searchResponse.title);
+                console.log(searchResponse[i].title);
+                newTitle.text(searchResponse[i].title);
                 // Appends image and text to result div
                 newSearchResult.append(newThumbnail);
                 newSearchResult.append(newTitle);
