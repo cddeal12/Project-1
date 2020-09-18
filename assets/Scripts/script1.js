@@ -71,8 +71,10 @@ foodNextBtn.on("click", function () {
 movieNextBtn.on("click", function () {
     pageOne.attr("style", "display: none;");
     pageTwo.attr("style", "display: block;");
+    $("body").attr("style", "background-color: white");
 });
 
+// Adds checkbox values to intolerancesArray, finds and removes of unchecked
 intolerancesList.on("click", ".form-check-input", function (){
     if($(this).is(":checked")){
         intolerancesArray.push($(this).val());
