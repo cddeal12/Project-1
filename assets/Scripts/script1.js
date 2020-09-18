@@ -6,7 +6,7 @@ var searchInputEl = $("#foodSearchEl");
 
 // xxxxx
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
-var spoonacularBaseURL = "https:applicationCache.spoonacular.com/recipes/complexSearch?query="
+var spoonacularBaseURL = "https:api.spoonacular.com/recipes/complexSearch?query="
 
 // "https://api.spoonacular.com/recipes/complexSearch?query=" + searchInput + "&intolerances=" + intolerancesInput + "&excludeIngredients=" + excludedIngredientsInput + "&cuisine=" + cuisineDataAttributeInput + "&apiKey=" + spoonacularAPI
 
@@ -95,8 +95,17 @@ searchBtn.on("click", function(event){
     // create a variable equal to the user's search input
     var searchTerms = searchInputEl.val().toLowerCase();
     console.log(searchTerms);
-    // loop through the intolerancesArray and create a string from it's indexes
+    // generate a string from the intolerancesArray
     var intoleranceString = intolerancesArray.toString();
     console.log(intoleranceString);
     // console.log(intolerancesString);
+    // generate a query url based on searchTerms and intoleranceString
+    var foodSearchURL = spoonacularBaseURL + searchTerms + "&intolerances=" + intoleranceString + spoonacularAPI;
+    // make ajax call using foodSearchURL
+    $.ajax({
+        method:"GET",
+        url:foodSearchURL
+    }).then(function(response){
+        console.log(response);
+    })
 })
