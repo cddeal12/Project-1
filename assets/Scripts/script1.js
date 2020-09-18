@@ -88,3 +88,15 @@ intolerancesList.on("click", ".form-check-input", function (){
 // Page Two
 
 // Consolidates user inputs into variables and makes FIRST API call
+
+searchBtn.on("click", function(event){
+    // prevent reload
+    event.preventDefault();
+    // create a variable equal to the user's search input
+    var searchTerms = searchInputEl.val().toLowerCase();
+    console.log(searchTerms);
+    // loop through the intolerancesArray and create a string from it's indexes
+    var intoleranceString = intolerancesArray.toString();
+    console.log(intoleranceString);
+    // console.log(intolerancesString);
+})
