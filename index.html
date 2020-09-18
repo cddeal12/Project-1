@@ -21,7 +21,7 @@
     <!-- Container holding all of the "page one" content -->
     <div class="container" id="page-one">
       <!-- Jumbotron Header -->
-      <div class="jumbotron jumbotron-fluid" style="background-color: aquamarine">
+      <!-- <div class="jumbotron jumbotron-fluid" style="background-color: aquamarine">
         <div class="container" id="main-jumbotron">
           <h1 class="display-4 text-center">
             The Date Planner That Will Not Kill Your Date
@@ -30,10 +30,10 @@
             The Dating app that will not kill your date!
           </p>
         </div>
-      </div>
+      </div> -->
 
       <!-- end of container div -->
-      <div class="card text-center mx-auto" id="start-card" style="width: 85rem">
+      <div class="card text-center mx-auto" id="start-card" >
         <div class="card-body" id="mainPageCard">
           <h5 class="card-title" id="mainCardTitleText">
             Something Will Go Here
@@ -54,11 +54,11 @@
       <!-- Page content for selecting food options -->
       <div class="food-page-content">
         <h1 class="allergy text-center">Food Preferences</h1>
-        <div id="allergySelectionContainer" class="col-12 col-md-4 mx-auto">
+        <div id="intolerances-list" class="col-12 col-md-4 mx-auto">
     
           <!-- Milk Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="milk-checkbox">
+            <input class="form-check-input" type="checkbox" value="Milk" id="milk-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Milk
             </label>
@@ -66,7 +66,7 @@
 
           <!-- Eggs Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="eggs-checkbox">
+            <input class="form-check-input" type="checkbox" value="Eggs" id="eggs-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Eggs
             </label>
@@ -74,7 +74,7 @@
 
           <!-- Treenuts Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="treenuts-checkbox">
+            <input class="form-check-input" type="checkbox" value="Treenuts" id="treenuts-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Treenuts
             </label>
@@ -82,7 +82,7 @@
 
           <!-- Peanuts Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="peanuts-checkbox">
+            <input class="form-check-input" type="checkbox" value="Peanuts" id="peanuts-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Peanuts
             </label>
@@ -90,7 +90,7 @@
 
           <!-- Shellfish Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="shellfish-checkbox">
+            <input class="form-check-input" type="checkbox" value="Shellfish" id="shellfish-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Shellfish
             </label>
@@ -98,7 +98,7 @@
 
           <!-- Wheat Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="wheat-checkbox">
+            <input class="form-check-input" type="checkbox" value="Wheat" id="wheat-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Wheat
             </label>
@@ -106,7 +106,7 @@
           
         <!-- Soy Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="soy-checkbox">
+            <input class="form-check-input" type="checkbox" value="Soy" id="soy-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Soy
             </label>
@@ -114,7 +114,7 @@
 
           <!-- Fish Checkbox -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="fish-checkbox">
+            <input class="form-check-input" type="checkbox" value="Fish" id="fish-checkbox">
             <label class="form-check-label" for="defaultCheck1">
               Fish
             </label>
@@ -131,7 +131,7 @@
       <div class="movie-page-content">
         <h1 class="movie text-center">Movie Preferences</h1>
 
-        <div id="movieSelectionContainer text-center" class="col-12 col-md-4 mx-auto">
+        <div id="movie-genre-list text-center" class="col-12 col-md-4 mx-auto">
           <!-- Trending Radio -->
           <div class="form-check">
             <input class="form-check-input" type="radio" name="exampleRadios" id="trending-radio" value="option1" checked>
