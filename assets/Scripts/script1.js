@@ -3,6 +3,13 @@
 var omdbAPI = "b22163a3"
 var spoonacularAPI = "8e22a5e31dcc4d959a0190eca3ccff29"
 
+// ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
+var spoonacularBaseURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + searchInput + "&intolerances=" + intolerances + "&excludeIngredients=" + excludedIngredients + "&cuisine=" + cuisineDataAttribute + "&apiKey=" + spoonacularAPI
+
+// ============ EXAMPLE SPOONACULAR QUERY=====================================
+// https://api.spoonacular.com/recipes/complexSearch?query=chicken&intolerances=dairy&excludeIngredients=eggs&cuisine=chinese&apiKey=8e22a5e31dcc4d959a0190eca3ccff29
+
+
 // Page variables
 var pageOne = $("#page-one");
 var pageTwo = $("#page-two");
