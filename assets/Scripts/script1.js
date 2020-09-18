@@ -136,3 +136,27 @@ searchBtn.on("click", function(event){
         recipeResults.attr("style", "display: block;");
     })
 })
+
+// Replicates above IF USER SELECTS PRE-SET CHOICES
+
+// Use Event Delegation to listen to the mealSuggestionContainer
+suggestionsContainer.on("click", '.foodSuggestionCard', function(){
+    var instaSearchTerm = $(this).attr('id');
+    console.log(instaSearchTerm);
+    var intoleranceString = intolerancesArray.toString();
+    var instaSearchUrl = spoonacularBaseURL + instaSearchTerm + "&intolerances=" + intoleranceString + spoonacularAPI;
+
+    $.ajax({
+        method:"GET",
+        url:instaSearchUrl
+    }).then(function(response){
+        console.log(response);
+    })
+
+    
+})
+
+
+    
+
+    
