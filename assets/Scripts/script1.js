@@ -1,12 +1,12 @@
 // Declared Global Variables
 
-var omdbAPI = "b22163a3"
-var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29"
+var omdbAPI = "b22163a3";
+var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
 
 // xxxxx
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
-var spoonacularBaseURL = "https:api.spoonacular.com/recipes/complexSearch?query="
+var spoonacularBaseURL = "https:api.spoonacular.com/recipes/complexSearch?query=";
 
 // "https://api.spoonacular.com/recipes/complexSearch?query=" + searchInput + "&intolerances=" + intolerancesInput + "&excludeIngredients=" + excludedIngredientsInput + "&cuisine=" + cuisineDataAttributeInput + "&apiKey=" + spoonacularAPI
 
@@ -37,9 +37,11 @@ var movieNextBtn = $("#movie-next-btn");
 var searchBtn = $('#searchBtnEl')
 
 // Page Content Variables
-var startCard = $("#start-card")
+var startCard = $("#start-card");
 var foodContent = $(".food-page-content");
 var movieContent = $(".movie-page-content");
+var recipeResults = $("#recipe-results-container");
+var suggestionsContainer = $("#mealSuggestionContainer");
 
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -107,5 +109,33 @@ searchBtn.on("click", function(event){
         url:foodSearchURL
     }).then(function(response){
         console.log(response);
+        suggestionsContainer.attr("style", "display: none;");
+        var searchResponse = response.results;
+
+        // Populates the search results container with the query response
+        for (i=0; i<searchResponse.length; i++) {
+
+            // New div to be added to the container
+            var newSearchResult = $("<div>");
+            newSearchResult.addClass("row border rounded my-3 p-3 bg-secondary");
+            newSearchResult.attr("RecipeId", searchResponse[i].id);
+                // Thumbnail Image
+                var newThumbnail = $("<img>");
+                newThumbnail.addClass("col-4");
+                newThumbnail.attr("src", searchResponse[i].image);
+                // Recipe Title  
+                var newTitle = $("<h3>");
+                newTitle.text(searchResponse.title);
+                // Appends image and text to result div
+                newSearchResult.append(newThumbnail);
+                newSearchResult.append(newTitle);
+                console.log(newSearchResult);
+            // Appends search result to results container
+            recipeResults.append(newSearchResult);
+            console.log(recipeResults);
+        }
+
+        // Displays the search results when they are finished populating
+        recipeResults.attr("style", "display: block;");
     })
 })
