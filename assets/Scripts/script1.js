@@ -62,8 +62,10 @@ foodNextBtn.on("click", function () {
 movieNextBtn.on("click", function () {
     pageOne.attr("style", "display: none;");
     pageTwo.attr("style", "display: block;");
+    $("body").attr("style", "background-color: white");
 });
 
+// Adds checkbox values to intolerancesArray, finds and removes of unchecked
 intolerancesList.on("click", ".form-check-input", function (){
     if($(this).is(":checked")){
         intolerancesArray.push($(this).val());
@@ -128,6 +130,49 @@ searchBtn.on("click", function(event){
     })
 })
 
+// Replicates above IF USER SELECTS PRE-SET CHOICES
+
+// Use Event Delegation to listen to the mealSuggestionContainer
+suggestionsContainer.on("click", '.foodSuggestionCard', function(){
+    var instaSearchTerm = $(this).attr('id');
+    console.log(instaSearchTerm);
+    var intoleranceString = intolerancesArray.toString();
+    var instaSearchUrl = spoonacularBaseURL + instaSearchTerm + "&intolerances=" + intoleranceString + spoonacularAPI;
+
+    $.ajax({
+        method:"GET",
+        url:instaSearchUrl
+    }).then(function(response){
+        console.log(response);
+        suggestionsContainer.attr("style", "display: none;");
+        var searchResponse = response.results;
+        // Populates the search results container with the query response
+        for (i=0; i<searchResponse.length; i++) {
+
+            // New div to be added to the container
+            var newSearchResult = $("<div>");
+            newSearchResult.addClass("row border rounded my-3 p-3 bg-secondary");
+            newSearchResult.attr("RecipeId", searchResponse[i].id);
+                // Thumbnail Image
+                var newThumbnail = $("<img>");
+                newThumbnail.addClass("col-4");
+                newThumbnail.attr("src", searchResponse[i].image);
+                // Recipe Title  
+                var newTitle = $("<h3>");
+                newTitle.text(searchResponse[i].title);
+                // Appends image and text to result div
+                newSearchResult.append(newThumbnail);
+                newSearchResult.append(newTitle);
+            // Appends search result to results container
+            recipeResults.append(newSearchResult);
+        }
+        recipeResults.attr("style", "display: block;");
+    })
+
+    
+})
+
+// Populates final page
 $(recipeResults).on("click", ".search-result" , function(event) {
     console.log("Clicked on a result");
     console.log($(this));
@@ -201,3 +246,9 @@ $(recipeResults).on("click", ".search-result" , function(event) {
         mainRecipeImage.attr("src", response.image);
     })
 });
+
+
+
+    
+
+    
