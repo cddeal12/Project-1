@@ -68,7 +68,7 @@ var moviePicks = {
     "The six billion dollar man",
     "Ghost busters: Afterlife",
     "Tenet",
-    "bill & ted face the music",
+    "Ad Astra",
     "Monster hunter",
   ],
   Horror: [
@@ -210,12 +210,12 @@ function getMovieData(){
     var newMovieRating = $("<h3>");
     newMovieRating.text(response.Rated);
     newMovieRating.attr("class", "text-center");
-    if(response.Rated === "R"){
-      newMovieRating.attr("style", "text-shadow: 1px 1px #95170A;");
+    if(response.Rated === "R" || response.Rated === "TV-MA"){
+      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #95170A;");
     }else if(response.Rated === "PG-13"){
-      newMovieRating.attr("style", "text-shadow 1px 1px #F69A2D;");
+      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #F69A2D;");
     }else{
-      newMovieRating.attr("style", "text-shadow 1px 1px #4DE996;")
+      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #4DE996;");
     }
     var newMoviePlot = $("<p>");
     newMoviePlot.text(response.Plot);
