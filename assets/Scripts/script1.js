@@ -113,6 +113,7 @@ var pageTwo = $("#page-two");
 var pageThree = $("#page-three");
 var intolerancesList = $("#intolerances-list");
 var intolerancesArray = [];
+var movieCheckList = $("#movie-genre-list")
 var movieGenreArray = [];
 var familyMode = false;
 
@@ -165,12 +166,15 @@ movieNextBtn.on("click", function () {
 console.log(moviePicks);
 console.log(moviePicks.Trending[2]);
 
-$("#movie-genre-list").on("click", ".form-check-input", function(){
-  if($(this).is(":checked")){
-    console.log($(this).val());
-  }
-})
+function chooseMovie(){
+  var radios = $('input[type="radio"]');
+  radios.change(function(){
+    var clickedRadio = radios.filter(':checked');
+    console.log(clickedRadio.val());
+  })
+}
 
+chooseMovie();
 // Adds checkbox values to intolerancesArray, finds and removes of unchecked
 intolerancesList.on("click", ".form-check-input", function () {
   if ($(this).is(":checked")) {
