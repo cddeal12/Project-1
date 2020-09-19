@@ -118,6 +118,7 @@ var intolerancesArray = [];
 var movieCheckList = $("#movie-genre-list");
 var checkedRadioVal;
 var randomMovieSelection;
+var newMovieID;
 var movieGenreArray = [];
 var familyMode = false;
 
@@ -204,8 +205,10 @@ function getMovieData(){
     url: movieSearchURL,
   }).then(function (response){
     console.log(response);
+    newMovieID = response.imdbID;
+    console.log(newMovieID);
     var newMovieTitle = $("<h1>");
-    newMovieTitle.text(response.Title);
+    newMovieTitle.text(response.Title + " (" + response.Year + ")");
     newMovieTitle.attr("class", "text-center");
     var newMovieRating = $("<h3>");
     newMovieRating.text(response.Rated);
