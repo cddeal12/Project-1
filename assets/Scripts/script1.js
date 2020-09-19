@@ -1,6 +1,6 @@
 // Declared Global Variables
 
-var omdbAPI = "?apikey=b22163a3";
+var omdbAPI = "&apikey=b22163a3";
 var omdbBaseURL = "http://www.omdbapi.com/?t="
 var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
 // var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
@@ -133,6 +133,8 @@ var foodContent = $(".food-page-content");
 var movieContent = $(".movie-page-content");
 var recipeResults = $("#recipe-results-container");
 var suggestionsContainer = $("#mealSuggestionContainer");
+var mainMovieInfo = $("#main-movie-info");
+var mainMovieImage = $("#main-movie-img");
 var mainRecipeInfo = $("#main-recipe-info");
 var mainRecipeImage = $("#main-recipe-img");
 
@@ -164,6 +166,7 @@ movieNextBtn.on("click", function () {
   pageOne.attr("style", "display: none;");
   pageTwo.attr("style", "display: block;");
   $("body").attr("style", "background-color: white");
+  getMovieData();
 });
 
 //=========== Selects a movie from the moviePicks object based on user input
@@ -181,8 +184,10 @@ function chooseRandomMovie(){
     console.log(clickedRadio.val());
     // sets GLOBAL checkedRadioVal variable equal to the value of the changed button
     checkedRadioVal=clickedRadio.val();
+    console.log(checkedRadioVal);
     // generates a random number between 0 and 10 and sets to a variable of randomIndex
-    var randomIndex = Math.floor(Math.random() * 11)
+    var randomIndex = Math.floor(Math.random() * 10)
+    console.log(randomIndex)
     console.log(moviePicks[checkedRadioVal]);
     // sets the GLOBAL randomMovie Selection variable equal to the key with the same value as the radio button inside the array and picks the index defined by the random number
     randomMovieSelection = moviePicks[checkedRadioVal][randomIndex];
@@ -190,9 +195,34 @@ function chooseRandomMovie(){
   }) 
 }//<---- end of the chooseRandomMovie Function Definition
 
-function getMovieData(movie){
+// ======= Function to get movie data and render to container=============
 
-}
+function getMovieData(){
+  var movieSearchURL = omdbBaseURL + randomMovieSelection + "&plot=full" +omdbAPI
+  $.ajax({
+    method: "GET",
+    url: movieSearchURL,
+  }).then(function (response){
+    console.log(response);
+    var newMovieTitle = $("<h1>");
+    newMovieTitle.text(response.Title);
+    newMovieTitle.attr("class", "text-center");
+    var newMovieRating = $("<h3>");
+    newMovieRating.text(response.Rated);
+    newMovieRating.attr("class", "text-center");
+    if(response.Rated === "R"){
+      newMovieRating.attr("style", "text-shadow: 1px 1px #95170A;");
+    }else if(response.Rated === "PG-13"){
+      newMovieRating.attr("style", "text-shadow 1px 1px #F69A2D;");
+    }else{
+      newMovieRating.attr("style", "text-shadow 1px 1px #4DE996;")
+    }
+    var newMoviePlot = $("<p>");
+    newMoviePlot.text(response.Plot);
+    mainMovieInfo.append(newMovieTitle,newMovieRating,newMoviePlot);
+  })
+
+}//<----- end of getMovie Data Function Definition
 
 // ======================================================
 // ======================================================
