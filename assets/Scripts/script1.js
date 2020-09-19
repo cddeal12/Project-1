@@ -1,6 +1,7 @@
 // Declared Global Variables
 
-var omdbAPI = "b22163a3";
+var omdbAPI = "?apikey=b22163a3";
+var omdbBaseURL = "http://www.omdbapi.com/?t="
 var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
 // var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
@@ -42,7 +43,7 @@ var moviePicks = {
     "The Notebook",
     "Remember Me",
     "Titanic",
-    "The Curious Case of Benjamin",
+    "The Curious Case of Benjamin Button",
     "Eternal Sunshine of the Spotless Mind",
     "Silver Linings Playbook",
   ],
@@ -165,8 +166,7 @@ movieNextBtn.on("click", function () {
   $("body").attr("style", "background-color: white");
 });
 
-// Selects a movie from the moviePicks object based on user input
-
+//=========== Selects a movie from the moviePicks object based on user input
 // Calls function
 chooseRandomMovie();
 
@@ -179,16 +179,19 @@ function chooseRandomMovie(){
     // if radio button is changed to be checked, it is saved to a variable
     var clickedRadio = radios.filter(':checked');
     console.log(clickedRadio.val());
-    // sets a new variable equal to the value of the changed button
+    // sets GLOBAL checkedRadioVal variable equal to the value of the changed button
     checkedRadioVal=clickedRadio.val();
     // generates a random number between 0 and 10 and sets to a variable of randomIndex
     var randomIndex = Math.floor(Math.random() * 11)
     console.log(moviePicks[checkedRadioVal]);
-    // sets a variable equal to the key with the same value as the radio button inside the array and picks the index defined by the random number
+    // sets the GLOBAL randomMovie Selection variable equal to the key with the same value as the radio button inside the array and picks the index defined by the random number
     randomMovieSelection = moviePicks[checkedRadioVal][randomIndex];
     console.log(randomMovieSelection);
-  })
-  
+  }) 
+}//<---- end of the chooseRandomMovie Function Definition
+
+function getMovieData(movie){
+
 }
 
 // ======================================================
