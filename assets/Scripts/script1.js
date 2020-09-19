@@ -116,6 +116,7 @@ var intolerancesList = $("#intolerances-list");
 var intolerancesArray = [];
 var movieCheckList = $("#movie-genre-list");
 var checkedRadioVal;
+var randomMovieSelection;
 var movieGenreArray = [];
 var familyMode = false;
 
@@ -165,17 +166,31 @@ movieNextBtn.on("click", function () {
 });
 
 // Selects a movie from the moviePicks object based on user input
-console.log(moviePicks);
 
+// Calls function
+chooseRandomMovie();
+
+// Function Definition
 function chooseRandomMovie(){
+  // sets a variable equal to all inputs with a type of radio
   var radios = $('input[type="radio"]');
+  // listens for a change on the radio button
   radios.change(function(){
+    // if radio button is changed to be checked, it is saved to a variable
     var clickedRadio = radios.filter(':checked');
     console.log(clickedRadio.val());
+    // sets a new variable equal to the value of the changed button
     checkedRadioVal=clickedRadio.val();
+    // generates a random number between 0 and 10 and sets to a variable of randomIndex
+    var randomIndex = Math.floor(Math.random() * 11)
+    console.log(moviePicks[checkedRadioVal]);
+    // sets a variable equal to the key with the same value as the radio button inside the array and picks the index defined by the random number
+    randomMovieSelection = moviePicks[checkedRadioVal][randomIndex];
+    console.log(randomMovieSelection);
   })
+  
 }
-chooseRandomMovie();
+
 // ======================================================
 // ======================================================
 // Adds checkbox values to intolerancesArray, finds and removes of unchecked
