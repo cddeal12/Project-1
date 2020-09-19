@@ -1,7 +1,8 @@
 // Declared Global Variables
 
-var omdbAPI = "&apikey=b22163a3";
+var omdbAPI = "&apikey=5f2c6c86";
 var omdbBaseURL = "http://www.omdbapi.com/?t="
+var posterBaseURl = "http://img.omdbapi.com/?i="
 var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
 // var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
@@ -223,7 +224,12 @@ function getMovieData(){
     var newMoviePlot = $("<p>");
     newMoviePlot.text(response.Plot);
     mainMovieInfo.append(newMovieTitle,newMovieRating,newMoviePlot);
+    mainMovieImage.attr("src", response.Poster);
   })
+  // var posterSearchUrl = posterBaseURl + newMovieID + omdbAPI;
+  // $.ajax({
+  //   method
+  // })
 
 }//<----- end of getMovie Data Function Definition
 
