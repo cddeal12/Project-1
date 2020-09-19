@@ -166,7 +166,7 @@ movieNextBtn.on("click", function () {
 // Selects a movie from the moviePicks object based on user input
 console.log(moviePicks);
 
-function chooseMovie(){
+function chooseRandomMovie(){
   var radios = $('input[type="radio"]');
   radios.change(function(){
     var clickedRadio = radios.filter(':checked');
@@ -174,7 +174,9 @@ function chooseMovie(){
     checkedRadioVal=clickedRadio.val();
   })
 }
-chooseMovie();
+chooseRandomMovie();
+// ======================================================
+// ======================================================
 // Adds checkbox values to intolerancesArray, finds and removes of unchecked
 intolerancesList.on("click", ".form-check-input", function () {
   if ($(this).is(":checked")) {
