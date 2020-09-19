@@ -9,7 +9,7 @@ var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
 var spoonacularBaseURL =
-  "https:api.spoonacular.com/recipes/complexSearch?query=";
+  "https:api.spoonacular.com/recipes/complexSearch/?query=";
 
 var moviePicks = {
   Trending: [
@@ -168,13 +168,14 @@ movieNextBtn.on("click", function () {
   pageOne.attr("style", "display: none;");
   pageTwo.attr("style", "display: block;");
   $("body").attr("style", "background-color: white");
-  getMovieData();
+  
+  getMovieData(); 
 });
 
 //=========== Selects a movie from the moviePicks object based on user input
 // Calls function
-chooseRandomMovie();
 
+chooseRandomMovie();
 // Function Definition
 function chooseRandomMovie(){
   // sets a variable equal to all inputs with a type of radio
@@ -183,13 +184,10 @@ function chooseRandomMovie(){
   radios.change(function(){
     // if radio button is changed to be checked, it is saved to a variable
     var clickedRadio = radios.filter(':checked');
-    console.log(clickedRadio.val());
     // sets GLOBAL checkedRadioVal variable equal to the value of the changed button
     checkedRadioVal=clickedRadio.val();
-    console.log(checkedRadioVal);
-    // generates a random number between 0 and 10 and sets to a variable of randomIndex
+    // generates a random number between 0 and 9 and sets to a variable of randomIndex
     var randomIndex = Math.floor(Math.random() * 10)
-    console.log(randomIndex)
     console.log(moviePicks[checkedRadioVal]);
     // sets the GLOBAL randomMovie Selection variable equal to the key with the same value as the radio button inside the array and picks the index defined by the random number
     randomMovieSelection = moviePicks[checkedRadioVal][randomIndex];
@@ -226,15 +224,10 @@ function getMovieData(){
     mainMovieInfo.append(newMovieTitle,newMovieRating,newMoviePlot);
     mainMovieImage.attr("src", response.Poster);
   })
-  // var posterSearchUrl = posterBaseURl + newMovieID + omdbAPI;
-  // $.ajax({
-  //   method
-  // })
-
+  
 }//<----- end of getMovie Data Function Definition
 
-// ======================================================
-// ======================================================
+
 // Adds checkbox values to intolerancesArray, finds and removes of unchecked
 intolerancesList.on("click", ".form-check-input", function () {
   if ($(this).is(":checked")) {
