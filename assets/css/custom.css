@@ -37,6 +37,8 @@ p {
     line-height: 1.4;
 }
 
+
+
 /* body {
     background-color: black;
 } */
@@ -94,10 +96,21 @@ p {
 }
 
 #recipe-bg-image{
-    background-image: url("../images/chinese-400.jpg");
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)), url("../images/chinese-400.jpg");
+    /* background-image: url("../images/chinese-400.jpg"); */
     background-size: cover;
     background-color: #F18814;
     height: 300px;
+    position: relative;
+}
+
+#recipe-title {
+    font-size: 48px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    margin-left: 30px;
 }
 
 
