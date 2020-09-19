@@ -1,13 +1,15 @@
 // Declared Global Variables
 
-var omdbAPI = "b22163a3";
+var omdbAPI = "&apikey=5f2c6c86";
+var omdbBaseURL = "http://www.omdbapi.com/?t="
+var posterBaseURl = "http://img.omdbapi.com/?i="
 var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
 // var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
 var spoonacularBaseURL =
-  "https:api.spoonacular.com/recipes/complexSearch?query=";
+  "https:api.spoonacular.com/recipes/complexSearch/?query=";
 
 var moviePicks = {
   Trending: [
@@ -42,7 +44,7 @@ var moviePicks = {
     "The Notebook",
     "Remember Me",
     "Titanic",
-    "The Curious Case of Benjamin",
+    "The Curious Case of Benjamin Button",
     "Eternal Sunshine of the Spotless Mind",
     "Silver Linings Playbook",
   ],
@@ -67,7 +69,7 @@ var moviePicks = {
     "The six billion dollar man",
     "Ghost busters: Afterlife",
     "Tenet",
-    "bill & ted face the music",
+    "Ad Astra",
     "Monster hunter",
   ],
   Horror: [
@@ -80,6 +82,7 @@ var moviePicks = {
     "Candyman",
     "In the tall grass",
     "Fractured",
+    "Doctor Sleep"
   ],
   Comedy: [
     "Emma",
@@ -113,6 +116,10 @@ var pageTwo = $("#page-two");
 var pageThree = $("#page-three");
 var intolerancesList = $("#intolerances-list");
 var intolerancesArray = [];
+var movieCheckList = $("#movie-genre-list");
+var checkedRadioVal;
+var randomMovieSelection;
+var newMovieID;
 var movieGenreArray = [];
 var familyMode = false;
 
@@ -128,6 +135,8 @@ var foodContent = $(".food-page-content");
 var movieContent = $(".movie-page-content");
 var recipeResults = $("#recipe-results-container");
 var suggestionsContainer = $("#mealSuggestionContainer");
+var mainMovieInfo = $("#main-movie-info");
+var mainMovieImage = $("#main-movie-img");
 var mainRecipeInfo = $("#main-recipe-info");
 var mainRecipeImage = $("#main-recipe-img");
 
@@ -159,7 +168,65 @@ movieNextBtn.on("click", function () {
   pageOne.attr("style", "display: none;");
   pageTwo.attr("style", "display: block;");
   $("body").attr("style", "background-color: white");
+  
+  getMovieData(); 
 });
+
+//=========== Selects a movie from the moviePicks object based on user input
+// Calls function
+
+chooseRandomMovie();
+// Function Definition
+function chooseRandomMovie(){
+  // sets a variable equal to all inputs with a type of radio
+  var radios = $('input[type="radio"]');
+  // listens for a change on the radio button
+  radios.change(function(){
+    // if radio button is changed to be checked, it is saved to a variable
+    var clickedRadio = radios.filter(':checked');
+    // sets GLOBAL checkedRadioVal variable equal to the value of the changed button
+    checkedRadioVal=clickedRadio.val();
+    // generates a random number between 0 and 9 and sets to a variable of randomIndex
+    var randomIndex = Math.floor(Math.random() * 10)
+    console.log(moviePicks[checkedRadioVal]);
+    // sets the GLOBAL randomMovie Selection variable equal to the key with the same value as the radio button inside the array and picks the index defined by the random number
+    randomMovieSelection = moviePicks[checkedRadioVal][randomIndex];
+    console.log(randomMovieSelection);
+  }) 
+}//<---- end of the chooseRandomMovie Function Definition
+
+// ======= Function to get movie data and render to container=============
+
+function getMovieData(){
+  var movieSearchURL = omdbBaseURL + randomMovieSelection + "&plot=full" +omdbAPI
+  $.ajax({
+    method: "GET",
+    url: movieSearchURL,
+  }).then(function (response){
+    console.log(response);
+    newMovieID = response.imdbID;
+    console.log(newMovieID);
+    var newMovieTitle = $("<h1>");
+    newMovieTitle.text(response.Title + " (" + response.Year + ")");
+    newMovieTitle.attr("class", "text-center");
+    var newMovieRating = $("<h3>");
+    newMovieRating.text(response.Rated);
+    newMovieRating.attr("class", "text-center");
+    if(response.Rated === "R" || response.Rated === "TV-MA"){
+      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #95170A;");
+    }else if(response.Rated === "PG-13"){
+      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #F69A2D;");
+    }else{
+      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #4DE996;");
+    }
+    var newMoviePlot = $("<p>");
+    newMoviePlot.text(response.Plot);
+    mainMovieInfo.append(newMovieTitle,newMovieRating,newMoviePlot);
+    mainMovieImage.attr("src", response.Poster);
+  })
+  
+}//<----- end of getMovie Data Function Definition
+
 
 // Adds checkbox values to intolerancesArray, finds and removes of unchecked
 intolerancesList.on("click", ".form-check-input", function () {
