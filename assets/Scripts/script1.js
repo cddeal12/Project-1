@@ -80,6 +80,7 @@ var moviePicks = {
     "Candyman",
     "In the tall grass",
     "Fractured",
+    "Doctor Sleep"
   ],
   Comedy: [
     "Emma",
