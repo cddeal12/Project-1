@@ -33,12 +33,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
 }
 
 body {
-    background-color: black;
+    background-color: #2E3338;
 }
 
 .onboard-card {
@@ -59,6 +59,16 @@ body {
     justify-content: flex-end;
 }
 
+.input-group {
+    height: 60px;
+}
+
+.form-control {
+    height: 60px;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
 
 /* Page Two */
 
@@ -70,6 +80,10 @@ body {
     min-width: 220px;
     flex-basis: 15%;
     margin: 15px;
+}
+
+.card-title {
+    margin-bottom: 0;
 }
 
 #recipe-pic {
