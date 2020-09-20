@@ -98,8 +98,9 @@ body {
     background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
     /* background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)), url("../images/chinese-400.jpg"); */
     background-size: cover;
+    background-position: center;
     background-color: #F18814;
-    height: 300px;
+    height: 450px;
     position: relative;
 }
 

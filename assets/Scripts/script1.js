@@ -27,7 +27,7 @@ var moviePicks = {
   ],
   Drama: [
     "A Star is Born",
-    "A Quiet Place II",
+    "A Quiet Place",
     "Lady Bird",
     "The Shape of Water",
     "Baby Driver",
