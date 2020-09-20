@@ -113,26 +113,24 @@ body {
 
 /* Animation set-up */
 
-#page-one {
-    position: relative;
-}
-
-#start-card {
-    z-index: 3;
-}
-
-#allergy-card {
-    z-index: 2;
-}
-
-#allergy-card {
-    z-index: 1;
-}
-
 #allergy-card,
 #movie-card {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(100px);
+}
+
+.animate-card {
+    transition: 0.3s;
+}
+
+.animate-card:hover {
+    z-index: 10;
+    /* -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05); */
+    transform: scale(1.01);
+    -webkit-box-shadow: 0px 4px 30px -9px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 4px 30px -9px rgba(0,0,0,0.54);
+    box-shadow: 0px 4px 30px -9px rgba(0,0,0,0.54);
 }
 
 

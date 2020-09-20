@@ -166,7 +166,7 @@ startBtn.on("click", function () {
   startCard.attr("style", "display: none;");
   // foodContent.css("opacity","0");
   foodContent.animate({
-    right: '200px',
+    right: '100px',
     opacity: '1'
   });
 });
@@ -176,7 +176,7 @@ foodNextBtn.on("click", function () {
   foodContent.attr("style", "display: none;");
   movieContent.attr("style", "display: block;");
   movieContent.animate({
-    right: '200px',
+    right: '100px',
     opacity: '1'
   });
 });
@@ -345,7 +345,7 @@ suggestionsContainer.on("click", ".foodSuggestionCard", function () {
       var newSearchResultCol = $("<div>");
       newSearchResultCol.addClass("col-12 mb-4");
       var newSearchResultCard = $("<div>");
-      newSearchResultCard.addClass("card flex-row");
+      newSearchResultCard.addClass("card animate-card flex-row");
       // Thumbnail Image
       var newSearchResultPic = $("<div>");
       newSearchResultPic.addClass("col-6 col-md-4 card-header border-0");
