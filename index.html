@@ -13,7 +13,7 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@500&family=IBM+Plex+Sans&family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@500&family=Literata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/custom.css"/>
   </head>
 
@@ -35,9 +35,7 @@
 
       <!-- end of container div -->
       <div class=" card col-10 col-md-6 onboard-card text-center mx-auto" id="start-card" >
-        <h3 class="card-title" id="mainCardTitleText">
-          DateMate
-        </h3>
+        <img src="./assets/images/dm-logo.svg" class="my-4" alt="logo">
         <p class="card-text" id="mainCardText">
           Find a meal and movie combo that won’t kill your date!
         </p>
@@ -48,8 +46,8 @@
       <!-- end of card div -->
 
       <!-- Page content for selecting food options -->
-      <div class="card col-10 col-md-6 mx-auto onboard-card food-page-content">
-        <h5 class="allergy text-center">Food allergies?</h5>
+      <div class="card col-10 col-md-6 mx-auto onboard-card food-page-content" id="allergy-card">
+        <h2 class="allergy text-center">Food allergies?</h2>
         <p class="text-center">Are there sensitivities to any of these foods?</p>
         <div id="intolerances-list" class="col-6 mx-auto">
     
@@ -125,8 +123,8 @@
       </div>
 
       <!-- Page content for making a movie search -->
-      <div class="card col-10 col-md-6 mx-auto onboard-card movie-page-content">
-        <h5 class="movie text-center">Movie Preferences</h5>
+      <div class="card col-10 col-md-6 mx-auto onboard-card movie-page-content" id="movie-card">
+        <h2 class="movie text-center">Movie Preferences</h2>
         <p class="text-center">Any favorite movie genres?</p>
 
         <div id="movie-genre-list text-center" class="col-6 mx-auto">
@@ -247,7 +245,7 @@
             <div class="row">
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="breakfast">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/breakfast-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Breakfast</h4>
@@ -257,7 +255,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="lunch">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/lunch-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Lunch</h4>
@@ -267,7 +265,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="dinner">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/dinner-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Dinner</h4>
@@ -277,7 +275,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="mexican">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/mexican-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Mexican</h4>
@@ -287,7 +285,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="thai">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/thai-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Thai</h4>
@@ -297,7 +295,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="italian">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/italian-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Italian</h4>
@@ -307,7 +305,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="chinese">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/chinese-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Chinese</h4>
@@ -317,7 +315,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="caribbean">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/caribbean-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Caribbean</h4>
@@ -327,7 +325,7 @@
               </div>
 
               <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="cajun">
-                <div class="card">
+                <div class="animate-card card">
                   <img class="card-img-top suggestionCardImg" src="./assets/images/cajun-400.jpg" alt="Card image cap">
                   <div class="card-body foodSuggestionCardBody">
                     <h4 class="card-title foodSuggestionCardBody">Cajun</h4>
@@ -430,5 +428,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets\Scripts\script1.js" async defer></script>
+    <script src="assets\Scripts\anime.min.js" async defer></script>
+    <script src="assets\Scripts\animations.js" async defer></script>
   </body>
 </html>
