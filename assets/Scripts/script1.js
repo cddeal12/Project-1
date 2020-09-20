@@ -10,7 +10,7 @@ var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
 var spoonacularBaseURL =
-  "https:api.spoonacular.com/recipes/complexSearch/?query=";
+  "https://api.spoonacular.com/recipes/complexSearch/?query=";
 
 var moviePicks = {
   Trending: [
@@ -19,7 +19,7 @@ var moviePicks = {
     "Hamilton",
     "Weathering with You",
     "The Gentlemen",
-    "Birds of Prey",
+    "Knives Out",
     "The Rhythm Section",
     "Dolittle",
     "The Lovebirds",
@@ -27,7 +27,7 @@ var moviePicks = {
   ],
   Drama: [
     "A Star is Born",
-    "A Quiet Place",
+    "A Quiet Place II",
     "Lady Bird",
     "The Shape of Water",
     "Baby Driver",
@@ -35,7 +35,7 @@ var moviePicks = {
     "Gravity",
     "The Irishman",
     "The Peanut Butter Falcon",
-    "Once Upon a Time in Hollywood",
+    "Richard Jewell",
   ],
   Romance: [
     "The Lovebirds",
@@ -57,7 +57,7 @@ var moviePicks = {
     "Wonder Woman",
     "Ready Player One",
     "Fury",
-    "War of the Planet of the Apes",
+    "John Wick: Chapter 3- Parabellum",
     "The Gentlemen",
     "Ford v Ferrari",
   ],
@@ -68,7 +68,7 @@ var moviePicks = {
     "The new mutants",
     "Artemis fowl",
     "The six billion dollar man",
-    "Ghost busters: Afterlife",
+    "Ghostbusters: Afterlife",
     "Tenet",
     "Ad Astra",
     "Monster hunter",
@@ -79,7 +79,7 @@ var moviePicks = {
     "Swallow",
     "The hunt",
     "The green Knight",
-    "A quite place part two",
+    "A quite place II",
     "Candyman",
     "In the tall grass",
     "Fractured",
@@ -95,15 +95,15 @@ var moviePicks = {
     "banana split",
     "Uncorked",
     "An american pickle",
-    "I use to go here",
+    "I used to go here",
   ],
   Documentary: [
     "A secret Love",
     "Athlete A",
     "After truth: disinformation & the coast of fake news",
     "Cheer",
-    "The killer inside: the mind of aaron hernandez",
-    "Miss america",
+    "Killer inside: the mind of aaron hernandez",
+    "Tiger King",
     "McMillions",
     "The pharmacist",
     "Hillary",
@@ -130,6 +130,7 @@ var foodNextBtn = $("#food-next-btn");
 var movieNextBtn = $("#movie-next-btn");
 var searchBtn = $("#searchBtnEl");
 var returnBtn = $("#returnBtn")
+var returnBtn2 = $("#returnBtn2")
 
 // Page Content Variables
 var startCard = $("#start-card");
@@ -154,6 +155,10 @@ var drinkPairingImg = $("#drink-pairing-img");
 
 // Resets Page to start
 returnBtn.on("click", function(){
+  window.location.reload();
+})
+
+returnBtn2.on("click", function(){
   window.location.reload();
 })
 
