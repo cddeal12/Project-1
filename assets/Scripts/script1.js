@@ -3,8 +3,10 @@
 var omdbAPI = "&apikey=5f2c6c86";
 var omdbBaseURL = "http://www.omdbapi.com/?t="
 var posterBaseURl = "http://img.omdbapi.com/?i="
-var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
+// var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
 // var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
+var spoonacularAPI= "&apiKey=efd5587fd9894c0caf3a416861bf6298"
+
 var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
@@ -150,7 +152,6 @@ var drinkPairingImg = $("#drink-pairing-img");
 
 //---------------------------------------------------------------------------------------------------------------------
 // Page One
-
 // Removes content that is not the main card when the page loads
 foodContent.attr("style", "display: none;");
 movieContent.attr("style", "display: none;");
@@ -238,6 +239,11 @@ function getMovieData(){
     mainMovieRating.text(response.Rated);
 
     mainMovieImage.css('background-image', 'url(' + response.Poster + ')');
+    // var newImage = $('<img>');
+    //  newImage.attr("src", response.Poster);
+    //  newImage.attr("class", "ml-3, mb-2");
+    //  newImage.attr("style", "float: left;")
+    //  mainMovieInfo.prepend(newImage);
   })
   
 }//<----- end of getMovie Data Function Definition
@@ -257,6 +263,10 @@ intolerancesList.on("click", ".form-check-input", function () {
 
 // ------------------------------------------------------------------------------------------------------------------------
 // Page Two
+
+// Restarts the site
+
+
 
 // Consolidates user inputs into variables and makes FIRST API call
 
