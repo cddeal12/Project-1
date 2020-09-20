@@ -79,7 +79,7 @@ var moviePicks = {
     "Swallow",
     "The hunt",
     "The green Knight",
-    "A quite place II",
+    "A quiet place II",
     "Candyman",
     "In the tall grass",
     "Fractured",
