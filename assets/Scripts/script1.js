@@ -136,11 +136,12 @@ var movieContent = $(".movie-page-content");
 var recipeResults = $("#recipe-results-container");
 var suggestionsContainer = $("#mealSuggestionContainer");
 
-
+var mainMovieTitle = $("#main-movie-title");
 var mainMovieInfo = $("#main-movie-info");
 var mainMovieImage = $("#main-movie-img");
 var mainRecipeInfo = $("#main-recipe-info");
 var mainRecipeImage = $("#main-recipe-img");
+var mainMovieRating = $("#main-movie-rating");
 
 var drinkPairingCard = $("#drink-pairing");
 var drinkPairingTitle = $("#drink-pairing-title");
@@ -224,22 +225,18 @@ function getMovieData(){
     console.log(response);
     newMovieID = response.imdbID;
     console.log(newMovieID);
-    var newMovieTitle = $("<h1>");
-    newMovieTitle.text(response.Title + " (" + response.Year + ")");
-    newMovieTitle.attr("class", "text-center");
-    var newMovieRating = $("<h3>");
-    newMovieRating.text(response.Rated);
-    newMovieRating.attr("class", "text-center");
+    mainMovieTitle.text(response.Title + " (" + response.Year + ")");
+    mainMovieRating.attr("class", "text-center");
     if(response.Rated === "R" || response.Rated === "TV-MA"){
-      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #95170A;");
+      mainMovieRating.attr("style", "text-shadow: 1px 1px 2px #95170A;");
     }else if(response.Rated === "PG-13"){
-      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #F69A2D;");
+      mainMovieRating.attr("style", "text-shadow: 1px 1px 2px #F69A2D;");
     }else{
-      newMovieRating.attr("style", "text-shadow: 1px 1px 2px #4DE996;");
+      mainMovieRating.attr("style", "text-shadow: 1px 1px 2px #4DE996;");
     }
-    var newMoviePlot = $("<p>");
-    newMoviePlot.text(response.Plot);
-    mainMovieInfo.append(newMovieTitle,newMovieRating,newMoviePlot);
+    mainMovieInfo.text(response.Plot);
+    mainMovieRating.text(response.Rated);
+
     mainMovieImage.attr("src", response.Poster);
   })
   
