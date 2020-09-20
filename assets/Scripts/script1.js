@@ -320,28 +320,62 @@ suggestionsContainer.on("click", ".foodSuggestionCard", function () {
     var searchResponse = response.results;
     // Populates the search results container with the query response
     for (i = 0; i < searchResponse.length; i++) {
-      // New div to be added to the container
+      // Various divs to container
       var newSearchResult = $("<div>");
-      newSearchResult.addClass(
-        "row border rounded my-3 p-3 bg-secondary search-result"
-      );
+      newSearchResult.addClass("row search-result");
       newSearchResult.attr("recipeId", searchResponse[i].id);
+      var newSearchResultCol = $("<div>");
+      newSearchResultCol.addClass("col-12 mb-4");
+      var newSearchResultCard = $("<div>");
+      newSearchResultCard.addClass("card flex-row");
       // Thumbnail Image
-      var newThumbnail = $("<img>");
-      newThumbnail.addClass("col-4");
-      newThumbnail.attr("src", searchResponse[i].image);
-      // Recipe Title
-      var newTitle = $("<h3>");
-      newTitle.text(searchResponse[i].title);
-      // Appends image and text to result div
-      newSearchResult.append(newThumbnail);
-      newSearchResult.append(newTitle);
-      // Appends search result to results container
+      var newSearchResultPic = $("<div>");
+      newSearchResultPic.addClass("col-6 col-md-4 card-header border-0");
+      newSearchResultPic.attr("id","recipe-pic");
+      newSearchResultPic.css("background-image", "url('searchResponse[i].image')");
+      // Recipe Text
+      var newSearchResultCardBlock = $("<div>");
+      newSearchResultCardBlock.addClass("col-6 col-md-8 card-block p-4");
+      var newSearchResultTitle = $("<h4>");
+      newSearchResultTitle.addClass("card-title");
+      newSearchResultTitle.text(searchResponse[i].title);
+      // var newSearchResultPrepTime = $("<h6>");
+      // newSearchResultPrepTime.addClass("card-prep-time");
+      // newSearchResultTitle.text(searchResponse[i].prep);
+      // var newSearchResultSummary = $("<p>");
+      // newSearchResultTitle.addClass("card-summary");
+      // newSearchResultTitle.text(searchResponse[i].summary);
+
+      // Append city
+      newSearchResultCardBlock.append(newSearchResultTitle);
+      newSearchResultCard.append(newSearchResultPic, newSearchResultCardBlock);
+      newSearchResultCol.append(newSearchResultCard);
+      newSearchResult.append(newSearchResultCol);
       recipeResults.append(newSearchResult);
     }
     recipeResults.attr("style", "display: block;");
   });
 });
+
+
+    //  // New div to be added to the container
+    //  var newSearchResult = $("<div>");
+    //  newSearchResult.addClass(
+    //    "row border rounded my-3 p-3 bg-secondary search-result"
+    //  );
+    //  newSearchResult.attr("recipeId", searchResponse[i].id);
+    //  // Thumbnail Image
+    //  var newThumbnail = $("<img>");
+    //  newThumbnail.addClass("col-4");
+    //  newThumbnail.attr("src", searchResponse[i].image);
+    //  // Recipe Title
+    //  var newTitle = $("<h3>");
+    //  newTitle.text(searchResponse[i].title);
+    //  // Appends image and text to result div
+    //  newSearchResult.append(newThumbnail);
+    //  newSearchResult.append(newTitle);
+    //  // Appends search result to results container
+    //  recipeResults.append(newSearchResult);
 
 // Populates final page
 $(recipeResults).on("click", ".search-result", function (event) {
@@ -417,6 +451,6 @@ $(recipeResults).on("click", ".search-result", function (event) {
     mainRecipeInfo.append(finalIngredients);
     mainRecipeInfo.append(finalDirections);
     // appends image
-    mainRecipeImage.attr("src", response.image);
+    $("#recipe-bg-image").css("background-image", "url('response.image')");
   });
 });
