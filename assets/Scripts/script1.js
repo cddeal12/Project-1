@@ -4,8 +4,11 @@ var omdbAPI = "&apikey=5f2c6c86";
 var omdbBaseURL = "https://www.omdbapi.com/?t="
 var posterBaseURl = "https://img.omdbapi.com/?i="
 // var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
-var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
+// var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 // var spoonacularAPI = "&apiKey=efd5587fd9894c0caf3a416861bf6298";
+var spoonacularAPI = "&apiKey=15a95bfa90b74161a231d6fbea6e8fa9";
+
+"
 var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
