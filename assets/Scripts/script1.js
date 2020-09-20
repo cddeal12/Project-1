@@ -498,7 +498,7 @@ $(recipeResults).on("click", ".search-result", function (event) {
     mainRecipeInfo.append(finalIngredients);
     mainRecipeInfo.append(finalDirections);
     // appends image
-    $("#recipe-bg-image").css("background-image", "url(response.image)");
+    $("#recipe-bg-image").css("background-image", "url(" + response.image + ")");
 
     // Adds content to the wine pairing section
 
