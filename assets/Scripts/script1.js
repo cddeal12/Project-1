@@ -468,10 +468,8 @@ $(recipeResults).on("click", ".search-result", function (event) {
     var wineDetails = wineResponse.productMatches;
 
     if (wineArray.length > 0) {
-      console.log("Setting Wine Title: IfTrue");
       drinkPairingTitle.text("We Recommend " + wineArray[0]);
     } else {
-      console.log("Setting Wine Title: IfFalse");
       drinkPairingTitle.text("We don't have a specific recommendation for this recipe");
     }
 
@@ -486,16 +484,10 @@ $(recipeResults).on("click", ".search-result", function (event) {
       newDetails.text("You can buy our recommendation ");
       var wineLink = $("<a>");
       wineLink.attr("href", wineDetails[0].link);
-      console.log(wineDetails[0].link);
       wineLink.text("Here.");
       newDetails.append(wineLink);
       drinkPairingInfo.append($("<br>"))
       drinkPairingInfo.append(newDetails);
-
-      var winePrice = $("<div>")
-      winePrice.text("This wine costs: " + wineDetails[0].price);
-      drinkPairinginfo.append(winePrice);
-
     }
 
   });
