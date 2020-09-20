@@ -8,7 +8,7 @@ var posterBaseURl = "https://img.omdbapi.com/?i="
 // var spoonacularAPI = "&apiKey=efd5587fd9894c0caf3a416861bf6298";
 var spoonacularAPI = "&apiKey=15a95bfa90b74161a231d6fbea6e8fa9";
 
-"
+
 var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
