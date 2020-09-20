@@ -135,10 +135,17 @@ var foodContent = $(".food-page-content");
 var movieContent = $(".movie-page-content");
 var recipeResults = $("#recipe-results-container");
 var suggestionsContainer = $("#mealSuggestionContainer");
+
+
 var mainMovieInfo = $("#main-movie-info");
 var mainMovieImage = $("#main-movie-img");
 var mainRecipeInfo = $("#main-recipe-info");
 var mainRecipeImage = $("#main-recipe-img");
+
+var drinkPairingCard = $("#drink-pairing");
+var drinkPairingTitle = $("#drink-pairing-title");
+var drinkPairingInfo = $("#drink-pairing-info");
+var drinkPairingImg = $("#drink-pairing-img");
 
 //---------------------------------------------------------------------------------------------------------------------
 // Page One
@@ -451,6 +458,45 @@ $(recipeResults).on("click", ".search-result", function (event) {
     mainRecipeInfo.append(finalIngredients);
     mainRecipeInfo.append(finalDirections);
     // appends image
-    $("#recipe-bg-image").css("background-image", "url('response.image')");
+    $("#recipe-bg-image").css("background-image", "url(response.image)");
+
+    // Adds content to the wine pairing section
+
+    var wineResponse = response.winePairing;
+    var wineArray = wineResponse.pairedWines;
+    var wineInfo = wineResponse.pairingText;
+    var wineDetails = wineResponse.productMatches;
+
+    if (wineArray.length > 0) {
+      console.log("Setting Wine Title: IfTrue");
+      drinkPairingTitle.text("We Recommend " + wineArray[0]);
+    } else {
+      console.log("Setting Wine Title: IfFalse");
+      drinkPairingTitle.text("We don't have a specific recommendation for this recipe");
+    }
+
+    if (wineInfo !== "") {
+      drinkPairingInfo.text(wineInfo);
+    } else {
+      drinkPairingInfo.text("This may not be a meal that any one wine pairs especially well with.");
+    }
+
+    if (wineDetails.length > 0) {
+      var newDetails = $("<div>");
+      newDetails.text("You can buy our recommendation ");
+      var wineLink = $("<a>");
+      wineLink.attr("href", wineDetails[0].link);
+      console.log(wineDetails[0].link);
+      wineLink.text("Here.");
+      newDetails.append(wineLink);
+      drinkPairingInfo.append($("<br>"))
+      drinkPairingInfo.append(newDetails);
+
+      var winePrice = $("<div>")
+      winePrice.text("This wine costs: " + wineDetails[0].price);
+      drinkPairinginfo.append(winePrice);
+
+    }
+
   });
 });
