@@ -67,10 +67,10 @@ var moviePicks = {
   Scifi: [
     "The Invisible Man",
     "Bloodshot",
-    "A quite place part two",
+    "The Quiet Place II",
     "The new mutants",
     "Artemis fowl",
-    "The six billion dollar man",
+    "Arrival",
     "Ghostbusters: Afterlife",
     "Tenet",
     "Ad Astra",
