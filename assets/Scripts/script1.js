@@ -112,7 +112,8 @@ var moviePicks = {
 };
 
 // Page variables
-var navBar = $(".navbar");
+var globalNav = $("#global-nav");
+var searchBar = $("#search-bar");
 var pageOne = $("#page-one");
 var pageTwo = $("#page-two");
 var pageThree = $("#page-three");
@@ -168,7 +169,8 @@ returnBtn2.on("click", function(){
 // Removes content that is not the main card when the page loads
 foodContent.attr("style", "display: none;");
 movieContent.attr("style", "display: none;");
-navBar.attr("style", "display: none;");
+// globalNav.attr("style", "display: none;");
+
 
 // !!!
 // These buttons will also save the state of the checkboxes in local storage, but the checkboxes are not currently working, to fix today
@@ -202,7 +204,7 @@ movieNextBtn.on("click", function () {
   pageOne.attr("style", "display: none;");
   pageTwo.attr("style", "display: block;");
   $("body").attr("style", "background-color: white");
-  navBar.attr("style", "display: block;");
+  globalNav.attr("style", "display: block;");
   getMovieData(); 
 });
 

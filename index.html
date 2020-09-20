@@ -19,6 +19,33 @@
 
   <body>
 
+    <!-- Global Nav -->
+
+    <div id="global-nav" style="display: none;">
+      <nav class="navbar navbar-light bg-dark p-4 d-flex justify-content-between">
+          <div class="container">
+              <a class="navbar-brand" href="#">
+                  <img src="assets/images/dm-logo-light.svg" class="d-inline-block align-top"  alt="datemate-logo">
+              </a>
+              <button class="btn" id="returnBtn">Start over</button>
+          </div>
+      </nav>
+      <!-- Contains Search Bar and Search Button -->
+      <div class="row p-3 m-0" id="search-bar">
+          <div class="container">
+              <form class="mx-2 my-auto d-inline w-100">
+                  <div class="input-group">
+                      <input type="text" class="form-control border border-right-0" id="foodSearchEl" placeholder="What's on the menu?">
+                      <span class="input-group-append">
+                          <button class="btn btn-outline-secondary border border-left-0 searchBtn" id="searchBtnEl" type="button">Search
+                          </button>
+                      </span>
+                  </div>
+              </form>
+          </div>
+      </div>
+    </div>
+
     <!-- Container holding all of the "page one" content -->
     <div class="container" id="page-one">
       <!-- Jumbotron Header -->
@@ -199,59 +226,13 @@
       </div>
     </div>
 
-    <!-- Global Nav -->
-
-    <nav class="navbar navbar-light bg-dark p-4 d-flex justify-content-between">
-      <div class="container">
-          <a class="navbar-brand" href="#">
-              <img src="assets/images/dm-logo-light.svg" class="d-inline-block align-top"  alt="datemate-logo">
-          </a>
-          <button class="btn" id="returnBtn">Start over</button>
-      </div>
-    </nav>
-    <!-- Contains Search Bar and Search Button -->
-    <div class="row p-3 m-0" id="search-bar">
-        <div class="container">
-            <form class="mx-2 my-auto d-inline w-100">
-                <div class="input-group">
-                    <input type="text" class="form-control border border-right-0" id="foodSearchEl" placeholder="What's on the menu?">
-                    <span class="input-group-append">
-                        <button class="btn btn-outline-secondary border border-left-0 searchBtn" id="searchBtnEl" type="button">Search
-                        </button>
-                    </span>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Container holding all of the "page two" content -->
     <div id="page-two" style="display: none;">
       <!-- ========================= This is the Meal Suggestion/ Search Page================ -->
         <!-- ======================================================================================== -->
         <div class="meal-suggestion-page" id="meal-suggestion-page">
-        <!-- Contains the return button to go back to start -->
-            <nav class="navbar navbar-light bg-dark p-4 d-flex justify-content-between">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <img src="assets/images/dm-logo-light.svg" class="d-inline-block align-top"  alt="datemate-logo">
-                    </a>
-                    <button class="btn" id="returnBtn">Start over</button>
-                </div>
-            </nav>
-            <!-- Contains Search Bar and Search Button -->
-            <div class="row p-3 m-0" id="search-bar">
-                <div class="container">
-                    <form class="mx-2 my-auto d-inline w-100">
-                        <div class="input-group">
-                            <input type="text" class="form-control border border-right-0" id="foodSearchEl" placeholder="What's on the menu?">
-                            <span class="input-group-append">
-                                <button class="btn btn-outline-secondary border border-left-0 searchBtn" id="searchBtnEl" type="button">Search
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            
 
           <!-- This DIV remains empty until results are returned, then it is shown and appended to  -->
           <div class="container mt-5 recipe-results-container" id="recipe-results-container"></div>
@@ -368,19 +349,7 @@
     <div class="container" id="page-three" style="display: none;">
 
       <!-- Contains Search Bar and Search Button -->
-      <div class="row p-3 m-0" id="search-bar">
-          <div class="container">
-              <form class="mx-2 my-auto d-inline w-100">
-                  <div class="input-group">
-                      <input type="text" class="form-control border border-right-0" id="foodSearchEl" placeholder="What's on the menu?">
-                      <span class="input-group-append">
-                          <button class="btn btn-outline-secondary border border-left-0 searchBtn" id="searchBtnEl" type="button">Search
-                          </button>
-                      </span>
-                  </div>
-              </form>
-          </div>
-      </div>
+
 
       <div class="row mb-4" id="main-recipe">
         <div class="col-12">
