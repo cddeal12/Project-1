@@ -130,6 +130,7 @@ var startBtn = $("#main-start-btn");
 var foodNextBtn = $("#food-next-btn");
 var movieNextBtn = $("#movie-next-btn");
 var searchBtn = $("#searchBtnEl");
+var returnBtn = $("#returnBtn");
 
 // Page Content Variables
 var startCard = $("#start-card");
@@ -151,7 +152,17 @@ var drinkPairingInfo = $("#drink-pairing-info");
 var drinkPairingImg = $("#drink-pairing-img");
 
 //---------------------------------------------------------------------------------------------------------------------
+
+// Resets to start
+returnBtn.on("click", function(){
+  window.location.reload();
+})
+
+
 // Page One
+
+
+
 // Removes content that is not the main card when the page loads
 foodContent.attr("style", "display: none;");
 movieContent.attr("style", "display: none;");
