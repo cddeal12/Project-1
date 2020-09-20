@@ -89,8 +89,9 @@ body {
 #main-movie-img {
     /* background-image: url("../images/movie-400.jpg"); */
     background-size: cover;
+    background-position: center;
     background-color: #F18814;
-    height: 200px;
+    height: 700px;
 }
 
 #recipe-bg-image{
