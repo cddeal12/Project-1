@@ -3,8 +3,8 @@
 var omdbAPI = "&apikey=5f2c6c86";
 var omdbBaseURL = "http://www.omdbapi.com/?t="
 var posterBaseURl = "http://img.omdbapi.com/?i="
-// var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
-var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
+var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
+// var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
