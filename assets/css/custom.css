@@ -87,7 +87,7 @@ body {
 }
 
 #main-movie-img {
-    background-image: url("../images/movie-400.jpg");
+    /* background-image: url("../images/movie-400.jpg"); */
     background-size: cover;
     background-color: #F18814;
     height: 200px;

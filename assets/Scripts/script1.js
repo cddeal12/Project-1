@@ -103,7 +103,7 @@ var moviePicks = {
     "Cheer",
     "The killer inside: the mind of aaron hernandez",
     "Miss america",
-    "McMillion$",
+    "McMillions",
     "The pharmacist",
     "Hillary",
     "Bad Trip",
@@ -237,7 +237,7 @@ function getMovieData(){
     mainMovieInfo.text(response.Plot);
     mainMovieRating.text(response.Rated);
 
-    mainMovieImage.attr("src", response.Poster);
+    mainMovieImage.css('background-image', 'url(' + response.Poster + ')');
   })
   
 }//<----- end of getMovie Data Function Definition
