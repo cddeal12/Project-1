@@ -202,175 +202,186 @@
     </div>
 
     <!-- Container holding all of the "page two" content -->
-    <div id="page-two" style="display: none;">
+    <div class="container" id="page-two" style="display: none;">
       <!-- ========================= This is the Meal Suggestion/ Search Page================ -->
         <!-- ======================================================================================== -->
         <div class="meal-suggestion-page" id="meal-suggestion-page">
-        <!-- Contains the return button to go back to start -->
-            <nav class="navbar navbar-light bg-dark p-4 d-flex justify-content-between">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <img src="assets/images/dm-logo-light.svg" class="d-inline-block align-top"  alt="datemate-logo">
-                    </a>
-                    <button class="btn" id="returnBtn">Start over</button>
-                </div>
-            </nav>
-            <!-- Contains Search Bar and Search Button -->
-            <div class="row p-3 m-0" id="search-bar">
-                <div class="container">
-                    <form class="mx-2 my-auto d-inline w-100">
-                        <div class="input-group">
-                            <input type="text" class="form-control border border-right-0" id="foodSearchEl" placeholder="What's on the menu?">
-                            <span class="input-group-append">
-                                <button class="btn btn-outline-secondary border border-left-0 searchBtn" id="searchBtnEl" type="button">Search
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
+          <!-- Contains the return button to go back to start -->
+          <div class="row mr-2 d-flex justify-content-end">
+              <button class="m-2 p-2 btn btn-md btn-outline-info returnButton" id="returnBtn">Return</button>
+          </div>
+          <!-- Contains Search Bar and Search Button -->
+          <div class="row my-5 d-flex justify-content-center">
+            <form class="col-8 justify-content-center form-inline">
+                <input type="text" class="w-75 form-control mb-2 mr-sm-2" id="foodSearchEl" placeholder="What's on the menu?">
+                <button type="submit" class="btn btn-outline-info mb-2 searchBtn" id="searchBtnEl">Search</button>
+            </form>
+          </div>
           <!-- This DIV remains empty until results are returned, then it is shown and appended to  -->
-          <div class="container mt-5 recipe-results-container" id="recipe-results-container"></div>
+          <div class="container mt-5 recipe-results-container" id="recipe-results-container" style="display: none;"></div>
           <!-- ====================================================================================== -->
           <!-- Container Holding all cards for Category Suggestions -->
           <div class="container mt-5 mealSuggestionContainer" id="mealSuggestionContainer">
-
-            <div class="row">
-              <div class="col-12 col-md-4">
-                <h2>Recipe ideas</h2>
+            <div class="row d-flex justify-content-between">
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="breakfast"
+              >
+                <!-- Used 150 x 150 pics -->
+                <img
+                  src="./assets/images/breakfast150.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Breakfast</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="lunch"
+              >
+                <img
+                  src="./assets/images/lunch150.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Lunch</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="dinner"
+              >
+                <img
+                  src="./assets/images/dinner150.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Dinner</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div class="row d-flex justify-content-between">
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="mexican"
+              >
+                <img
+                  src="./assets/images/MexicanImg.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Mexican</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="thai"
+              >
+                <img
+                  src="./assets/images/thaiImg.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Thai</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="italian"
+              >
+                <img
+                  src="./assets/images/italianImg.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Italian</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div class="row d-flex justify-content-between">
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="chinese"
+              >
+                <img
+                  src="./assets/images/chineseImg.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Chinese</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="caribbean"
+              >
+                <img
+                  src="./assets/images/caribbeanImg.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Caribbean</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="card mt-5 col-10 col-sm-3 foodSuggestionCard"
+                id="cajun"
+              >
+                <img
+                  src="./assets/images/cajunImg.jpg"
+                  class="card-img-top mt-3 suggestionCardImg"
+                  alt="..."
+                />
+                <div class="card-body foodSuggestionCardBody">
+                  <h5 class="card-title suggestionTitle">Cajun</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+              </div>
               </div>
             </div>
-
-            <!-- Suggestion cards -->
-
-            <div class="row">
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="breakfast">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/breakfast-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Breakfast</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="lunch">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/lunch-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Lunch</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="dinner">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/dinner-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Dinner</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="mexican">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/mexican-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Mexican</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="thai">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/thai-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Thai</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="italian">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/italian-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Italian</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="chinese">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/chinese-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Chinese</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="caribbean">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/caribbean-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Caribbean</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-4 foodSuggestionCard mb-4" id="cajun">
-                <div class="card">
-                  <img class="card-img-top suggestionCardImg" src="./assets/images/cajun-400.jpg" alt="Card image cap">
-                  <div class="card-body foodSuggestionCardBody">
-                    <h4 class="card-title foodSuggestionCardBody">Cajun</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-
-            </div> <!-- end uggestion cards -->
-
-
-
-
-            <!-- Recommendations -->
-        
-            <div  class="row">
-
-              <div class="col-12 col-md-6 mb-4" id="drink-pairing">
-                <div class="card">
-                  <div class="card-img-top" id="drink-pairing-img" alt="Card image cap">
-                    <!-- css background-image -->
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title" id="drink-pairing-title">Wine Pairing Title</h4>
-                    <p class="card-text" id="drink-pairing-info">Wine pairing description orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 mb-4" id="main-movie">
-                <div class="card">
-                  <div class="card-img-top" id="main-movie-img" alt="Card image cap">
-                    <!-- css background-image -->
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title" id="main-movie-title">Movie Pairing Title</h4>
-                    <p class="card-text" id="main-movie-info">Movie pairing description orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
           </div>
         </div>
     </div>
@@ -378,44 +389,11 @@
     <!-- Container holding all of the "page three" content -->
     <div class="container" id="page-three" style="display: none;">
 
-      <!-- Contains the return button to go back to start -->
-      <nav class="navbar navbar-light bg-dark p-4 d-flex justify-content-between">
-          <div class="container">
-              <a class="navbar-brand" href="#">
-                  <img src="assets/images/dm-logo-light.svg" class="d-inline-block align-top"  alt="datemate-logo">
-              </a>
-              <button class="btn" id="returnBtn">Start over</button>
-          </div>
-      </nav>
-      <!-- Contains Search Bar and Search Button -->
-      <div class="row p-3 m-0" id="search-bar">
-          <div class="container">
-              <form class="mx-2 my-auto d-inline w-100">
-                  <div class="input-group">
-                      <input type="text" class="form-control border border-right-0" id="foodSearchEl" placeholder="What's on the menu?">
-                      <span class="input-group-append">
-                          <button class="btn btn-outline-secondary border border-left-0 searchBtn" id="searchBtnEl" type="button">Search
-                          </button>
-                      </span>
-                  </div>
-              </form>
-          </div>
-      </div>
-
-      <div class="row mb-4" id="main-recipe">
-        <div class="col-12">
-            <div class="card">
-              <div class="px-4 mb-5" id="recipe-bg-image">
-                <h1 id="recipe-title">
-                  <!-- Ingredient list -->
-                </h1>
-              </div>
-              <div class="col-12 col-md-6 mx-auto pb-4" id="main-recipe-info">
-                <!-- Recipe content -->
-              </div>
-            </div>
-        </div>
-      </div>
+      <!-- Holds the recipe info and picture at the top of the page -->
+      <main class="row" id="main-recipe">
+        <div class="pull-left" id="main-recipe-info"></div>
+        <img class="float-right" id="main-recipe-img" src="" alt="">
+      </main>
 
       <!-- Holds a dynamically populated drink pairing div based on the recipe -->
       <div class="row" id="drink-pairing">
