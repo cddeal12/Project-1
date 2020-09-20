@@ -5,7 +5,10 @@ var omdbBaseURL = "https://www.omdbapi.com/?t="
 var posterBaseURl = "https://img.omdbapi.com/?i="
 // var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
 // var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
-var spoonacularAPI = "&apiKey=efd5587fd9894c0caf3a416861bf6298";
+// var spoonacularAPI = "&apiKey=efd5587fd9894c0caf3a416861bf6298";
+var spoonacularAPI = "&apiKey=15a95bfa90b74161a231d6fbea6e8fa9";
+
+
 var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
@@ -132,7 +135,6 @@ var foodNextBtn = $("#food-next-btn");
 var movieNextBtn = $("#movie-next-btn");
 var searchBtn = $("#searchBtnEl");
 var returnBtn = $("#returnBtn")
-var returnBtn2 = $("#returnBtn2")
 
 // Page Content Variables
 var startCard = $("#start-card");
@@ -158,11 +160,8 @@ var drinkPairingImg = $("#drink-pairing-img");
 // Resets Page to start
 returnBtn.on("click", function(){
   window.location.reload();
-})
+});
 
-returnBtn2.on("click", function(){
-  window.location.reload();
-})
 
 // Page One
 
