@@ -13,7 +13,7 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@500&family=IBM+Plex+Sans&family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@500&family=Literata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/custom.css"/>
   </head>
 
@@ -35,9 +35,7 @@
 
       <!-- end of container div -->
       <div class=" card col-10 col-md-6 onboard-card text-center mx-auto" id="start-card" >
-        <h3 class="card-title" id="mainCardTitleText">
-          DateMate
-        </h3>
+        <img src="./assets/images/dm-logo.svg" class="my-4" alt="logo">
         <p class="card-text" id="mainCardText">
           Find a meal and movie combo that won’t kill your date!
         </p>
@@ -48,8 +46,8 @@
       <!-- end of card div -->
 
       <!-- Page content for selecting food options -->
-      <div class="card col-10 col-md-6 mx-auto onboard-card food-page-content">
-        <h5 class="allergy text-center">Food allergies?</h5>
+      <div class="card col-10 col-md-6 mx-auto onboard-card food-page-content" id="allergy-card">
+        <h2 class="allergy text-center">Food allergies?</h2>
         <p class="text-center">Are there sensitivities to any of these foods?</p>
         <div id="intolerances-list" class="col-6 mx-auto">
     
@@ -125,8 +123,8 @@
       </div>
 
       <!-- Page content for making a movie search -->
-      <div class="card col-10 col-md-6 mx-auto onboard-card movie-page-content">
-        <h5 class="movie text-center">Movie Preferences</h5>
+      <div class="card col-10 col-md-6 mx-auto onboard-card movie-page-content" id="movie-card">
+        <h2 class="movie text-center">Movie Preferences</h2>
         <p class="text-center">Any favorite movie genres?</p>
 
         <div id="movie-genre-list text-center" class="col-6 mx-auto">
@@ -430,5 +428,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets\Scripts\script1.js" async defer></script>
+    <script src="assets\Scripts\anime.min.js" async defer></script>
+    <script src="assets\Scripts\animations.js" async defer></script>
   </body>
 </html>

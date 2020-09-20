@@ -3,8 +3,8 @@
 var omdbAPI = "&apikey=5f2c6c86";
 var omdbBaseURL = "http://www.omdbapi.com/?t="
 var posterBaseURl = "http://img.omdbapi.com/?i="
-// var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
-var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
+var spoonacularAPI = "&apiKey=074bf8b019424ce6945ad1bc2ede2965";
+// var spoonacularAPI = "&apiKey=8e22a5e31dcc4d959a0190eca3ccff29";
 var searchInputEl = $("#foodSearchEl");
 
 // ============== Order Matters for spoonacular query construction ===== ALL QUERY INPUTS MUST BE SEPARATED BY COMMAS==============
@@ -158,16 +158,27 @@ movieContent.attr("style", "display: none;");
 // These buttons will also save the state of the checkboxes in local storage, but the checkboxes are not currently working, to fix today
 // !!!
 
+
+
 // Removes the main card and moves on to the foodContent on 'start' button click
 startBtn.on("click", function () {
-  startCard.attr("style", "display: none;");
   foodContent.attr("style", "display: block;");
+  startCard.attr("style", "display: none;");
+  // foodContent.css("opacity","0");
+  foodContent.animate({
+    right: '200px',
+    opacity: '1'
+  });
 });
 
 // Removes the foodContent and moves on to the movieContent on 'next' button click
 foodNextBtn.on("click", function () {
   foodContent.attr("style", "display: none;");
   movieContent.attr("style", "display: block;");
+  movieContent.animate({
+    right: '200px',
+    opacity: '1'
+  });
 });
 
 // Links to pageTwo when the movieNext button is clicked

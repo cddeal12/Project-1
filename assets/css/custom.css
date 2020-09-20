@@ -1,5 +1,5 @@
 body {
-    font-family: 'IBM Plex Serif', serif;;
+    font-family: 'Literata', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,12 +34,12 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
-/* body {
+body {
     background-color: black;
-} */
+}
 
 .onboard-card {
     padding: 40px;
@@ -110,3 +110,30 @@ p {
     color: white;
     margin-left: 30px;
 }
+
+/* Animation set-up */
+
+#page-one {
+    position: relative;
+}
+
+#start-card {
+    z-index: 3;
+}
+
+#allergy-card {
+    z-index: 2;
+}
+
+#allergy-card {
+    z-index: 1;
+}
+
+#allergy-card,
+#movie-card {
+    opacity: 0;
+    transform: translateX(200px);
+}
+
+
+
