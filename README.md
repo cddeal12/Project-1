@@ -9,27 +9,47 @@
 * [License](#license)
 
 
-## Description
+## __Description__
+Play't Safe is an app designed to help you make sure you don't kill your guests with your food or with boredom!
+
+With so many existing, and  emerging allergies, it can be stressful to cook for guests..._especially_ ones that you'd like to see a _second_ time. Powered by [Spoonacular API](https://spoonacular.com/food-api) API and backed by the [Open Movie Database](https://www.omdbapi.com/), Play't Safe helps you choose a meal and a movie for a night in. It even offers wine pairings for certain meals. 
+
+Just follow the simple prompts to ensure that you find the right meal to impress. 
+
+
+## __Screenshot__
+
+### __Landing Page__
+![Landing Page](assets/images/landing-page.png)
+
+### __Allergies Selection__
+![Allergies Selection](assets/images/allergies-page.png)
+
+### __Search Page with Recommended Categories__
+![Search Page](assets/images/suggestions-page.png)
+
+### __Demo__
+![Demo](assets/images/demo.gif)
+
+## __URL__
+Visit our site live at https://cddeal12.github.io/Project-1/
+
+<hr>
+
+## __Contributions__
+
+This website is brought to you by Brandon Walker, Andrew Stewart, Caleb Deal, and Alexander Fleming of the Georgia Tech Coding Bootcamp. 
+
+We hope you enjoy!
 
 
 
 
-## Screenshot
-
-![Image](URL)
+<br>
 
 
-## URL
-Deployed at...
 
-
-## Contributions
-
-https://www.tutorialrepublic.com/faq/how-to-check-a-checkbox-is-checked-or-not-using-jquery.php
-
-https://www.tutorialrepublic.com/faq/how-to-check-if-a-value-exists-in-an-array-in-javascript.php
-
-
+<hr>
 ## License
 
 MIT License
